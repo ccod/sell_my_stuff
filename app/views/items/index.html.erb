@@ -1,0 +1,20 @@
+<h1>Listing items</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Suggested offer</th>
+    <th>Bidder</th>
+    <th>Offer</th>
+    <th></th>
+  </tr>
+
+<%= render :partial  => "item", :collection  => @items %>
+  <tr>
+    <td colspan="5"><%= render  :partial => "form" if params[:secret].eql?("123") %> </td>
+  </tr>
+</table>
+
+<br />
+
+<%= link_to 'New Item', new_item_path %>

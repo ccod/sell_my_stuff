@@ -1,0 +1,8 @@
+<tr>
+  <td><%= item.name %></td>
+  <td><%= item.suggested_offer %></td>
+  <td><%= item.bidder %></td>
+  <td><%= item.offer %></td>
+  <td><%= render :partial => "bid_form", :locals  => {:item  => item} unless item.offer %></td>
+  <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+</tr>
