@@ -1,33 +1,27 @@
-<%= form_for(@item) do |f| %>
-  <% if @item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+<div id="new-item">
+  <%= form_for(@item) do |f| %>
+    <% if @item.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
-      <ul>
-      <% @item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @item.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name, "Item name" %><br />
+      <%= f.text_field :name, :size => 35 %>
+    </div>
+    <div class="field">
+      <%= f.label :suggested_offer %><br />
+      $<%= f.text_field :suggested_offer, :size => 10 %>
+    </div>
+    <div class="actions"><br>
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :suggested_offer %><br />
-    <%= f.text_field :suggested_offer %>
-  </div>
-  <!-- <div class="field">
-    <%= f.label :bidder %><br />
-    <%= f.text_field :bidder %>
-  </div>
-  <div class="field">
-    <%= f.label :offer %><br />
-    <%= f.text_field :offer %>
-  </div> -->
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

@@ -1,0 +1,9 @@
+<div id="login-area">
+<% if authorized? %>
+  <%= button_to "logout", logout_path %>
+<% else %>
+    <%= form_tag '/login' %>
+    <%= password_field_tag 'password', nil, :maxlength => 10 %>
+    </form>
+<% end %>
+</div>

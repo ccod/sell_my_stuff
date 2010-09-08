@@ -11,14 +11,38 @@ pre {
   padding: 10px;
   font-size: 11px;
 }
+#login-area {
+  top:5px;
+  right:5px;
+  position:absolute;
+}
 
+#new-item {
+  margin: 2em;
+  padding: 1em;
+  background-color: #ffbb66;
+}
 a { color: #000; }
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
-
+.suggest {
+  text-align: left;
+}
 div.field, div.actions {
   margin-bottom: 10px;
+  margin-left: 1em;
 }
+
+.items {
+  border-collapse: collapse;
+}
+
+.items th, .items td {
+  padding: 0.25em 1.5em 0.25em 0.25em;
+  white-space: nowrap;
+}
+
+
 .items td.currency {
   text-align: right;
   padding-right: 1em;

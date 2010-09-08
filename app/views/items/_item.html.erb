@@ -1,8 +1,8 @@
 <tr>
   <td><%= item.name %></td>
-  <td class="currency"><%= item.suggested_offer %></td>
+  <td class="currency"><%= number_to_currency item.suggested_offer %></td>
   <td><%= item.bidder %></td>
-  <td><%= item.offer %></td>
-  <td><%= render :partial => "bid_form", :locals  => {:item  => item} unless item.offer %></td>
-  <td><%= link_to('Destroy', item, :method => :delete) if authorized? %></td>
+  <td class="currency"><%= number_to_currency item.offer %></td>
+  <td nowrap width="250"><%= render :partial => "bid_form", :locals  => {:item  => item} unless item.offer %></td>
+  <td class="currency"><%= link_to('X', item, :method => :delete) if authorized? %></td>
 </tr>

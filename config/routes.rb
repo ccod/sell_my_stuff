@@ -1,4 +1,8 @@
 SellMyStuff::Application.routes.draw do
+  match '/login' => "authorization#login", :as => :login
+
+  match '/logout' => "authorization#logout", :as => :logout
+
   resources :items
 
   # The priority is based upon order of creation:
