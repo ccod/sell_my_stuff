@@ -1,20 +1,23 @@
-<h1>Listing items</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Suggested offer</th>
-    <th>Bidder</th>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<div class="container_16">
+  <div class="grid_8 prefix_5 headings">
+    <h1>Listing items</h1>
+  </div>
+<table class="grid_13 items">
+  <tr class="headings">
+    <th class="suffix_1">Name</th>
+    <th class="suffix_2">Suggested offer</th>
+    <th class="suffix_1">Bidder</th> 
     <th>Offer</th>
-    <th></th>
+    <th width="100%"></th>
   </tr>
-
 <%= render :partial  => "item", :collection  => @items %>
   <tr>
-    <td colspan="5"><%= render  :partial => "form" if params[:secret].eql?("123") %> </td>
+    <td colspan="5"><%= render  :partial => "form" if authorized? %> </td>
   </tr>
 </table>
-
 <br />
-
-<%= link_to 'New Item', new_item_path %>
+</div>

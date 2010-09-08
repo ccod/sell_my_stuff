@@ -12,13 +12,13 @@
   <% end %>
   <div class="field">
     <%= f.label :bidder %><br />
-    <%= f.text_field :bidder %>
+    <%= f.text_field :bidder, :size  => 15 %>
   </div>
   <div class="field">
     <%= f.label :offer %><br />
-    <%= f.text_field :offer %>
+    <%= f.text_field :offer, :size  => 9%>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions field">
+    <br /><%= f.submit %>
   </div>
 <% end %>

@@ -19,7 +19,13 @@ a:hover { color: #fff; background-color:#000; }
 div.field, div.actions {
   margin-bottom: 10px;
 }
-
+.items td.currency {
+  text-align: right;
+  padding-right: 1em;
+}
+.headings {
+  background-color:#ff6600;
+}
 div.field {
   float:left;
 }
