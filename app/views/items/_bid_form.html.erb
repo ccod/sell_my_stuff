@@ -1,24 +1,35 @@
 <%= form_for(item) do |f| %>
   <% if item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+    <div>
+      <div id="error_explanation">
+        <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
-      <ul>
-      <% item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+        <ul>
+        <% item.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>    
   <% end %>
-  <div class="field">
-    <%= f.label :bidder %><br />
-    <%= f.text_field :bidder, :size  => 15 %>
+  <div class="grid_2 text">
+    <% item.bidder = Bidder.new %>
+    <%= f.fields_for :bidder do |bidder| %>
+    <div class="hidden-elements">
+      <%= bidder.label :name %><br>
+    </div>
+    <%= bidder.text_field :name, :size  => 15, :class => 'bidder_name' %>
+    <div class="hidden-elements">
+      <%= bidder.label :email %><br>
+      <%= bidder.text_field :email, :size  => 15 %><br>
+      <%= bidder.label :phone %><br>
+      <%= bidder.text_field :phone, :size  => 15 %><br>
+    </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :offer %><br />
-    $<%= f.text_field :offer, :size  => 9%>
+  <div class="grid_3 text">
+    $<%= f.text_field :offer, :size => 8, :class => 'item_offer' %><%= f.submit "Bid" %>
   </div>
-  <div class="actions field">
-    <br /><%= f.submit "Bid" %>
+  <% if item.errors.any? %>
   </div>
+  <% end %>
 <% end %>
