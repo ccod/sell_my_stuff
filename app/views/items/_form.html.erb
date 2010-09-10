@@ -1,5 +1,5 @@
 <div id="new-item">
-  <%= form_for(@item) do |f| %>
+  <%= form_for(@item, :html => { :multipart => true }) do |f| %>
     <% if @item.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -19,6 +19,9 @@
     <div class="field">
       <%= f.label :suggested_offer %><br />
       $<%= f.text_field :suggested_offer, :size => 10 %>
+    </div>
+    <div class="field"><br />
+      <%= f.file_field :pic %>
     </div>
     <div class="actions"><br>
       <%= f.submit %>

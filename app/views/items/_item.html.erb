@@ -1,4 +1,5 @@
 <tr>
+  <td><%= image_tag item.pic.url(:thumb) %></td>
   <td><%= item.name %></td>
   <td class="currency"><%= number_to_currency item.suggested_offer %></td>
   <td><%= item.bidder %></td>

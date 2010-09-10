@@ -1,5 +1,7 @@
 class Item < ActiveRecord::Base
   
+  has_attached_file :pic, :styles => { :medium => "800x800>", :thumb => "50x50>" }
+  
   def offer=(n)
     write_attribute :offer, n ? (n.to_f*100.0).to_i : n
   end
