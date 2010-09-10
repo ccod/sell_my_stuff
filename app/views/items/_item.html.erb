@@ -1,12 +1,12 @@
-<div class="row grid_16">
+<div id="<%= "row_#{item.id}" %>" class="row grid_16">
   <div class="grid_7 text"><%= item.name %></div>
   <div class="grid_3 text currency"><%= number_to_currency item.suggested_offer %></div>
   <% if item.offer %>
-  <div class="grid_2 text"><%= item.bidder %></div>
+  <div class="grid_2 text"><%= item.bidder.name if item.bidder %></div>
   <div class="grid_3 text currency"><%= number_to_currency item.offer %></div>
   <% else %>
     <%= render :partial => "bid_form", :locals  => {:item  => item}  %>
   <% end %>
-  <div class="clearfix text"><%= link_to('X', item, :method => :delete) if authorized? %></div>
+  <div class="clearfix text"><%= link_to_delete('X', item_path(item)+".js", "$('#row_#{item.id}').hide(500, function() {$('#row_#{item.id}').remove()})") if authorized? %></div>
 </div>
 <div class="clear"></div>

@@ -79,6 +79,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(items_url) }
       format.xml  { head :ok }
+      format.js   { render :text => @item.id}
     end
   end
 end

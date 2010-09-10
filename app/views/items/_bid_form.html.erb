@@ -12,7 +12,8 @@
       </div>    
   <% end %>
   <div class="grid_2 text">
-    <%= fields_for(current_bidder) do |bidder| %>
+    <% item.bidder = Bidder.new %>
+    <%= f.fields_for :bidder do |bidder| %>
     <div class="hidden-elements">
       <%= bidder.label :name %><br>
     </div>
