@@ -1,18 +1,16 @@
-  <div class="grid_8 prefix_5 headings">
-    <h1>Stuff for Sale</h1>
+  <div class="grid_16 headings header">
+    <h1>Grab My Gear</h1>
     <%= render :partial  => "login" %>
   </div>
-<table class="grid_13 items">
-  <tr class="headings">
-    <th class="">Name</th>
-    <th class="suggest alpha suffix_1">Suggested offer</th>
-    <th class="suffix_1">Bidder</th> 
-    <th>Offer</th>
-    <th width="100%" colspan="2"></th>
-  </tr>
-<%= render :partial  => "item", :collection  => @items %>
-  <tr>
-    <td colspan="5"><%= render  :partial => "form" if authorized? %> </td>
-  </tr>
-</table>
-<br />
+  <div class="grid_16 headings items">
+    <div class="grid_7">Name</div>
+    <div class="grid_3 suggest alpha">Suggested offer</div>
+    <div class="grid_2 ">Bidder</div> 
+    <div class="grid_3">Offer</div>
+    <div class="grid_1" colspan="2"></div>
+  </div>
+  <div class="clear"></div>
+  <%= render :partial  => "item", :collection  => @items %>
+  <div class="clear"></div>
+  
+  <div class="grid_10 prefix_1"><%= render  :partial => "form" if authorized? %></div>
