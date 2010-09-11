@@ -1,5 +1,8 @@
 <div id="<%= "row_#{item.id}" %>" class="row grid_16">
-  <div class="grid_7 text"><%= image_tag item.pic.url(:thumb) %><%= item.name %></div>
+  <div href="<%= "#{item.pic.url(:medium)}"%>" toptions="shaded = 1, overlayClose = 1" class="grid_2 text">
+    <%= image_tag item.pic.url(:thumb) %>
+  </div>
+  <div class="grid_5 text"><%= item.name %></div>
   <div class="grid_3 text currency"><%= number_to_currency item.suggested_offer %></div>
   <% if item.offer %>
   <div class="grid_2 text"><%= item.bidder.name if item.bidder %></div>
